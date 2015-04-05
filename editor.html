@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Create Recipe</title>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script src="Editor.js"></script>
+	</head>
+	<body>
+		<style>
+			#textDiv {
+				text-align: center;
+				margin-top: 25px;
+			}
+			#control {
+				text-align: center;
+				margin-top: 10px;
+			}
+			#fileList {
+				float: right;
+				margin-right: 100px;
+				margin-left: -1000px;
+			}
+			#backButton { margin-left: 10px; }
+			h1 { text-align: center; }
+		</style>
+		<h1>Create Recipe</h1>
+
+		<div id="fileList">
+			<h2>Recipes</h2>
+		</div>
+
+		<div id="textDiv">
+			<textarea id="textarea" rows="15", cols="100"></textarea>
+		</div>
+
+		<div id="control">
+			<input id="filename" type="text" value="newFile.txt">
+			<input type="button" class="btn" value="Save" onclick="saveFile();">
+			<!-- <input type="button" class="btn" value="Open" onclick="openFile()"> -->
+			<input type="button" class="btn" value="Delete" onclick="deleteFile()">
+		</div>
+		<button id="backButton" type="button" class="btn" onClick="home()">Back</button>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Please enter password</title>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script>
+			function go() {
+				var password = "";
+				$.ajax({
+					type: "GET",
+					url: "./password.txt",
+					dataType: 'text',
+					success: function(text) {
+						password = text.trim();
+					}
+				});
+
+				setTimeout(function() {
+					var enteredPass = document.getElementById("passbox").value;
+					if (enteredPass === password) {
+						location = "incu.html";
+						localStorage.setItem("password", "correct");
+					} 
+					else {
+						location = "index.html";
+						localStorage.setItem("password", "incorrect");
+					}
+				}, 1000);
+			}
+		</script>
+	</head>
+	<body>
+		<style>
+			#div { text-align: center; }
+			h1 { text-align: center; }
+			p { text-align: center; }
+		</style>
+		<h1>Incufridge</h1>
+		<p>Please enter the password</p>
+		<p>(The password is incufridge)</p>
+		<div id="div">
+			<input id="passbox" type="password" name="prompt">
+			<button type="button" class="btn" onClick="go()">Go</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+Possible commands:
+pwm
+fan on
+fan off
+light on
+light off
+read display
+set temp
+press button
+
+every <interval> <date> <time> <filename>
+example:
+every 1 minute 11/12/2015 10:32 file
+
+createlog

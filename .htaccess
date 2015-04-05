@@ -1,0 +1,9 @@
+AuthType Basic
+AuthName "Authentication Needed"
+AuthUserFile /home/maxmatic/webapps/cademons/incu/.htpasswd
+AuthGroupFile None
+Require valid-user
+
+Order Allow,Deny
+Allow from all
+
